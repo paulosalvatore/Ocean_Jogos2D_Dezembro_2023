@@ -13,6 +13,14 @@ public class PlayerController : MonoBehaviour
     // Variável: Tipo e Nome
     Rigidbody2D rb;
 
+    // Public -> Unity visualiza e exibe essa variável
+    // Float -> Tipo de dado numérico com casas decimais
+    // Speed -> Nome da variável
+    // 3f -> Valor inicial da variável
+    //   Depois que a Unity compilar o script pela primeira vez,
+    //    o valor que estiver Unity será usado
+    public float speed = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +33,11 @@ public class PlayerController : MonoBehaviour
     {
         // Seta para esquerda, valor do H = -1
         // Seta para direita, valor do H = 1
-        var h = Input.GetAxis("Horizontal");
+        var h = Input.GetAxis("Horizontal") * speed;
 
         // Seta para cima, valor do V = 1
         // Seta para baixo, valor do V = -1
-        var v = Input.GetAxis("Vertical");
+        var v = Input.GetAxis("Vertical") * speed;
 
         // Movimentamos o Rigidbody alterando sua velocidade
         // A velocidade do Rigidbody possui dois eixos: X (esq/dir) e Y (cima/baixo)
