@@ -31,6 +31,8 @@ public class EnemyController : MonoBehaviour
         if (col.CompareTag("Bullet"))
         {
             Destroy(gameObject);
+
+            Destroy(col.gameObject);
         }
     }
 }
