@@ -25,4 +25,12 @@ public class EnemyController : MonoBehaviour
 
         rb.velocity = direction.normalized * speed;
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Bullet"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
